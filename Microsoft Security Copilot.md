@@ -80,6 +80,13 @@ Copilot is built using Azure OpenAI Services and is designed to integrate with e
 
 # Integration with Security-specific sources
 
+Copilot combines powerful LLMs with security-specific sources from Microsoft. These security-specific sources are informed by Microsoft’s unique global threat intelligence, more than 65 trillion daily signals, and incorporates information from a growing set of security solutions using plug-ins and connections to knowledge base
+
+Through plug-ins, Copilot integrates with Microsoft's own security products, non-Microsoft products, and open-source intelligence feeds.
+
+The information you give Copilot will only be accessible to your organization. Your data is your data, and it's protected by comprehensive enterprise compliance and security controls. Your data isn't used to train the foundation AI models.
+
+<img width="690" height="635" alt="image" src="https://github.com/user-attachments/assets/29223a76-cfdc-4288-826a-e282f761db84" />
 
 
 
