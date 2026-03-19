@@ -88,5 +88,53 @@ The information you give Copilot will only be accessible to your organization. Y
 
 <img width="690" height="635" alt="image" src="https://github.com/user-attachments/assets/29223a76-cfdc-4288-826a-e282f761db84" />
 
+# Microsoft Security Copilot terminology
+
+**Terminology**
+
+The following terms are important for understanding the way Microsoft Security Copilot works:
+
+**Session** – A particular conversation within Copilot. Copilot maintains context within a session.
+
+**Prompt** – A specific statement or question within a session. A user enters a prompt in the prompt bar.
+
+**Capability** – A function Copilot uses to solve part of a problem. A capability may sometimes be referred to as a skill.
+
+**Plugin** – A collection of capabilities by a particular resource.
+
+**Workspace** - Copilot workspaces are separate Copilot work environments within the tenant in which your Copilot instance is operating.
+
+**Agents** - Microsoft Security Copilot agents are AI-powered tools that autonomously manage security and IT tasks.
+
+**Orchestrator** – Copilot’s system for composing capabilities together to answer a user’s prompt.
+
+# Prompt bar and sessions
+
+At the center of Security Copilot is the prompt bar. You use the prompt bar to tell Copilot what insights you want from your security data, this is referred to as the prompt. In other words, the prompt is the text-based, natural language input you provide in the prompt bar that instructs Copilot to generate a response. 
+
+<img width="650" height="78" alt="image" src="https://github.com/user-attachments/assets/9ecbc021-acbe-4d32-9d7f-8fe9f2527802" />
+
+
+**Plugins and capabilities**
+
+In the previous unit, we mentioned that Copilot integrates with various sources through plugins, including Microsoft's own security products such as Microsoft Sentinel, Microsoft Defender XDR, and Microsoft Intune, non-Microsoft solutions, and open-source intelligence feeds. 
+
+The integration enabled by the plugin, for any specific data source, provides Copilot with a collection of capabilities. Each capability is like a function in software, it’s designed to do a specialized task within the scope of the data source. 
+
+
+For example, the plugin to Microsoft Defender XDR includes a collection of individual capabilities that are used only by Microsoft Defender XDR. These include:
+
+The ability to summarize an incident.
+
+Support incident response teams in resolving incidents through guided responses (a set of recommended actions based on the specific incident).
+
+The ability to analyze scripts and code.
+
+The ability to generate KQL queries from natural language input.
+
+The ability to generate incident reports.
+
+
+Copilot currently supports plug-ins for Microsoft services and non-Microsoft services, including websites and custom plug-ins that can be enabled.
 
 
