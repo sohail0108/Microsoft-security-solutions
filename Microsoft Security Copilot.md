@@ -115,7 +115,7 @@ At the center of Security Copilot is the prompt bar. You use the prompt bar to t
 <img width="650" height="78" alt="image" src="https://github.com/user-attachments/assets/9ecbc021-acbe-4d32-9d7f-8fe9f2527802" />
 
 
-**Plugins and capabilities**
+# Plugins and capabilities
 
 In the previous unit, we mentioned that Copilot integrates with various sources through plugins, including Microsoft's own security products such as Microsoft Sentinel, Microsoft Defender XDR, and Microsoft Intune, non-Microsoft solutions, and open-source intelligence feeds. 
 
@@ -137,4 +137,25 @@ The ability to generate incident reports.
 
 Copilot currently supports plug-ins for Microsoft services and non-Microsoft services, including websites and custom plug-ins that can be enabled.
 
+<img width="526" height="524" alt="image" src="https://github.com/user-attachments/assets/caf486b3-9f7a-4c7d-917b-dfaea04316e1" />
+
+<img width="526" height="653" alt="image" src="https://github.com/user-attachments/assets/fa8e27ae-0263-464d-a37a-357ec5be0cb1" />
+
+# Workspaces
+
+Copilot workspaces are separate Copilot work environments within the tenant in which your Copilot instance is operating.
+
+To help you better understand the concept of workspaces, we'll use the analogy of house with multiple rooms. Each room is configured to be optimized for its function and the people that will use that room. When someone enters the house, they may have access to some rooms but not others.
+
+<img width="1685" height="508" alt="image" src="https://github.com/user-attachments/assets/0c89a962-f096-47f0-9d64-54d77f925e5e" />
+
+# Agents
+
+A Microsoft Security Copilot agent is an advanced, AI-powered assistant built into Microsoft Security Copilot. These agents go beyond just answering questions—they can autonomously manage high-volume security and IT tasks. 
+
+They’re deeply integrated with Microsoft’s security tools and can also work with partner solutions. Each agent is tailored for specific security scenarios, such as threat protection, identity management, or data security.
+
+These agents are designed to learn from feedback, adapt to your organization’s workflows, and operate securely within Microsoft’s Zero Trust framework.
+
+<img width="1385" height="750" alt="image" src="https://github.com/user-attachments/assets/c3b4f5a8-b1af-4eee-9b1f-1daff8927470" />
 
