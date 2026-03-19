@@ -159,3 +159,11 @@ These agents are designed to learn from feedback, adapt to your organization’s
 
 <img width="1385" height="750" alt="image" src="https://github.com/user-attachments/assets/c3b4f5a8-b1af-4eee-9b1f-1daff8927470" />
 
+# how Microsoft Security Copilot processes prompt requests
+
+**Process flow**
+
+When a user submits a prompt, Copilot processes that prompt to generate the best possible response. The diagram that follows illustrates, at a high level, steps that Copilot takes to process the prompt and generate a response.
+
+<img width="4036" height="1457" alt="image" src="https://github.com/user-attachments/assets/5a86e2a4-9707-4f59-8ead-eec2ed23ba39" />
+
