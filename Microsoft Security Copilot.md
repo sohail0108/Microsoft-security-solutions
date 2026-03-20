@@ -167,3 +167,72 @@ When a user submits a prompt, Copilot processes that prompt to generate the best
 
 <img width="4036" height="1457" alt="image" src="https://github.com/user-attachments/assets/5a86e2a4-9707-4f59-8ead-eec2ed23ba39" />
 
+**Process log**
+
+
+During this process, Copilot generates a process log that is visible to the user. The user can see what capability is used to generate the response. This is important because it enables the user to determine whether the response was generated from a trusted source.
+
+<img width="836" height="572" alt="image" src="https://github.com/user-attachments/assets/d6e0289d-6b59-4bec-a23a-adb36f4efb2e" />
+
+
+# Describe the elements of an effective prompt
+
+Copilot provides promptbooks and prompt suggestions, which are helpful, particularly if you're just starting an incident investigation. At some point, however, you'll want and need to enter your own prompts. In those cases, the quality of the response that Copilot returns depends in large part on the quality of the prompt used. In general, a well-crafted prompt with clear and specific inputs leads to more useful responses by Copilot.
+
+
+**Elements of an effective prompt**
+
+Security analysts or researchers should include the following elements when writing a prompt.
+
+**Goal** - specific, security-related information that you need
+**Context** - why you need this information or how you'll use it
+**Expectations** - format or target audience you want the response tailored to
+**Source** - known information, data sources, or plugins Copilot should use
+
+<img width="1284" height="344" alt="image" src="https://github.com/user-attachments/assets/51d0439a-35a0-4af7-b97a-a4dfacc3f506" />
+
+Every good prompt should have a goal. Whether it comes in the form of instructions or questions, it should indicate what you want out of your current session.
+
+For Copilot, context can refer to the time frame, or that you'll use the response for a report.
+
+Expectations can include whether you want the response to be in a table format, a list of action steps, a summary, or even a diagram. 
+
+Source might be useful in specifying which Microsoft plugins you're referring to, if needed. 
+
+**REQUEST WITH NO FORMAT**
+<img width="1910" height="1061" alt="image" src="https://github.com/user-attachments/assets/7077e7e1-a638-40b3-a8db-b7b2f6922937" />
+
+**RESPONSE**
+<img width="744" height="937" alt="image" src="https://github.com/user-attachments/assets/a267ad4e-8ef4-43f2-bf7a-5c9d9f594b61" />
+
+
+**REQUEST WITH FORMAT**
+
+<img width="759" height="156" alt="image" src="https://github.com/user-attachments/assets/421f335b-6464-4402-9297-c8ffe2cd679b" />
+
+**RESPONSE**
+
+<img width="727" height="841" alt="image" src="https://github.com/user-attachments/assets/4a3eb558-bb1b-4c1e-9f1a-675ed196c144" />
+
+**TIPS FOR BETTER PROMPTING**
+
+**1.** Be specific, clear, and concise as much as you can about what you want to achieve.
+
+You can always start simply with your first prompt, but as you get more familiar with Copilot, include more details following the elements of an effective prompt.
+
+
+**Basic prompt:** Pearl Sleet actor
+**Better prompt:** Can you give me information about Pearl Sleet activity, including a list of known indicators of compromise and tools, tactics, and procedures (TTPs)?
+
+**2**. Provide necessary context to narrow down where Copilot looks for data.
+
+**Basic prompt**: Summarize incident 15134.
+**Better prompt**: Summarize incident 15134 in Microsoft Defender XDR into a paragraph that I can submit to my manager and create a list of entities involved.
+
+
+**3.** Copilot is geared toward action, so telling it what you want it to do for exceptions is more productive.
+
+**Basic prompt:** Give me a list of unmanaged devices in my network.
+**Better prompt:** Give me a list of high-risk unmanaged devices in my network. If they're named "test" remove them from the list.
+
+
