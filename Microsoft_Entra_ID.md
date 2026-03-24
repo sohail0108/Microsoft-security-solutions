@@ -122,3 +122,374 @@ Add more global admins
 
 📈 Track progress over time
 
+# Basic Terminology (Simple Understanding)
+
+1️⃣ **Tenant (Most Important Concept)**
+
+👉 **Tenant** = Your Organization in Entra ID
+
+A separate instance of Entra ID for your company Contains:
+
+1. Users 👤
+
+2. Groups 👥
+
+3. Devices 💻
+
+4. Apps 📱
+
+5. Policies 🔐
+
+Has:
+
+Unique Tenant ID & Domain name (e.g., contoso.onmicrosoft.com)
+
+✅ Think:
+👉 Tenant = Full company environment + security boundary
+
+#
+
+**2️⃣ Directory**
+
+👉 **Directory** = Data inside the tenant
+
+Stores all identity info:
+
+1. Users
+
+2. Apps
+
+3. Devices
+
+Like a database/catalog
+
+✅ **Important:** 1 Tenant = 1 Directory
+
+#
+
+**3️⃣ Multi-Tenant**
+
+👉 Multi-tenant = Multiple Entra tenants
+
+Used when:
+
+1. Company has multiple branches/subsidiaries
+2. Mergers & acquisitions
+3. Different countries (compliance rules)
+
+✅ Think:
+
+1 tenant → single company
+Multi-tenant → multiple company environments
+
+# 👥 Who uses Microsoft Entra ID?
+
+🛠️**1. IT Administrators**
+
+**They use it to:**
+
+1. 🔐 Control who can access what
+2. 🔑 Enable MFA (Multi-Factor Authentication)
+3. 📊 Manage users, roles, and policies
+4. 🛡️ Protect identities & credentials
+5. 📋 Handle access governance (rules, permissions)
+   
+**✅ Example:**
+
+**Admin sets rule** → “Office login ke liye OTP mandatory”
+
+# 
+
+**💻 2. Developers**
+
+👉 App banane wale log
+
+**They use it to:**
+
+1. 🔑 Add SSO (Single Sign-On) in apps
+2. 👤 Let users login with existing accounts
+3. 🔗 Use APIs to access organization data
+
+**✅ Example:**
+Ek app banayi → user directly company account se login kar sakta hai
+
+#
+
+**🧑‍💼 3. End Users (Indirectly)**
+
+👉 Employees / users
+
+**They benefit from:**
+
+1. 🔓 Single login (SSO)
+2. 📱 Secure access from anywhere
+3. 🔐 Extra security (MFA)
+
+#
+
+**☁️ 4. Service Subscribers**
+
+**Users of:**
+
+1. Microsoft Azure
+2. Microsoft 365
+3. Dynamics 365
+
+👉 Automatically get access to Entra ID
+
+**✅ They can:**
+
+Use basic features
+Upgrade to Premium for advanced security
+
+#
+**⚡ One-Line Summary**
+
+👉 Admins manage security, developers integrate login, users access apps, and cloud subscribers automatically use Entra ID.
+
+---
+
+# Microsoft Entra ID - Identity Types
+
+## 🔐 Introduction
+Microsoft Entra ID supports different types of identities.  
+Main question: **"Kisko identity assign kar sakte ho?"**
+
+👉 Answer: 3 main categories
+
+---
+
+<img width="637" height="226" alt="image" src="https://github.com/user-attachments/assets/ac9df7f4-42d6-47e5-b2f5-d87386b9f605" />
+
+
+## 👤 1. User Identities (Humans)
+These are identities assigned to people.
+
+### Examples:
+- Employees (internal users)
+- Customers
+- Partners
+- Vendors
+- Consultants
+
+### Use:
+- Login to applications
+- Access organizational resources
+
+---
+
+## 💻 2. Device Identities
+These are identities assigned to physical devices.
+
+### Examples:
+- Mobile phones
+- Laptops / Desktops
+- IoT devices
+
+### Use:
+- Ensure only trusted devices can access resources
+- Apply device-based security policies
+
+---
+
+## ⚙️ 3. Workload Identities (Software)
+These are identities assigned to software-based objects.
+
+### Examples:
+- Applications
+- Virtual Machines (VMs)
+- Services
+- Containers
+
+### Use:
+- Secure communication between services
+- Avoid hardcoded credentials (passwords)
+
+---
+
+## 🌐 Other Important Identity Types
+
+### External Identities
+- Users outside the organization
+- Examples: partners, customers
+- Used for secure collaboration
+
+---
+
+### 🔗 Hybrid Identities
+- Combination of:
+  - On-premises Active Directory
+  - Cloud (Entra ID)
+
+### Benefit:
+- Same login for both environments
+
+---
+
+## ⚡ Final Summary of Identity Types
+Microsoft Entra ID assigns identities to:
+- 👤 Humans (Users)
+- 💻 Devices
+- ⚙️ Software (Workloads)
+
+👉 Purpose: Secure and controlled access to resources
+
+
+# Microsoft Entra ID - User & Workload Identities
+
+---
+
+## 👤 User Identities
+
+User identities represent **people**:
+- Employees
+- Customers
+- Partners
+- Vendors
+- Consultants
+
+---
+
+## 🔐 Two Key Concepts
+
+### 1. How User Authenticates
+
+#### Internal Authentication
+- User has account in **your organization’s Entra ID**
+- Uses same account to login
+
+#### External Authentication
+- User logs in using:
+  - Another organization’s Entra ID
+  - Social account (Google, Facebook, etc.)
+  - Other identity providers
+
+---
+
+### 2. UserType Property
+
+Defines **relationship with organization**
+
+- **Member** → Full access (employees)
+- **Guest** → Limited access (external users)
+
+---
+
+## 👥 User Types Explained
+
+### 🏢 Internal Member
+- Employees of organization
+- Login: Internal Entra ID
+- Access: Full (Member-level)
+
+---
+
+### 🌐 External Guest
+- Partners, vendors, consultants
+- Login: External account
+- Access: Limited (Guest-level)
+
+---
+
+### 🔄 External Member
+- Used in **multi-tenant organizations**
+
+#### Example:
+- Contoso user accessing Fabrikam resources
+- Login: External (Contoso account)
+- Access: Member-level in Fabrikam
+
+---
+
+### ⚠️ Internal Guest (Legacy)
+- Internal account but limited access
+- Used earlier before B2B
+- Now mostly replaced by **B2B collaboration**
+
+---
+
+## 🤝 B2B Collaboration
+- External users use **their own credentials**
+- Organization doesn’t manage their passwords
+- Falls under **External Identities**
+
+---
+
+## ⚙️ Workload Identities
+
+### 📌 What is it?
+Identity for **software (not humans)**
+
+Used by:
+- Applications
+- Services
+- Virtual Machines
+- Containers
+
+---
+
+### 🎯 Purpose
+- Authenticate apps securely
+- Access resources without human login
+
+---
+
+## ⚠️ Security Challenges
+- Credentials need secure storage
+- Hard to track:
+  - When created
+  - When to revoke
+- Risk of:
+  - Data breach
+  - Unauthorized access
+
+---
+
+## 🛡️ Solution: Microsoft Entra Workload ID
+Helps secure and manage workload identities
+
+---
+
+## 🔧 Types of Workload Identities
+
+### 1. Applications
+- App registered in Entra ID
+- Enables integration
+
+---
+
+### 2. Service Principals
+- Identity of an application in a tenant
+
+#### Key Points:
+- Created after app registration
+- Used for:
+  - Authentication
+  - Authorization
+
+---
+
+### 3. Managed Identities
+- No need to manage credentials manually
+- Azure handles:
+  - Passwords
+  - Secrets
+
+✅ More secure than service principals
+
+---
+
+## ⚡ Final Summary of User & Workload Identities
+
+### User Identities:
+- 👤 Internal Member → Employee (full access)
+- 🌐 External Guest → Limited access
+- 🔄 External Member → External login + full access
+- ⚠️ Internal Guest → Legacy
+
+### Workload Identities:
+- ⚙️ Apps, Services, VMs
+- 🔐 Used for secure app-to-app communication
+- 🛡️ Managed Identities = safest option
+
+---
