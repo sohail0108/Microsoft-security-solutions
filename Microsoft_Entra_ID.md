@@ -696,5 +696,140 @@ Helps secure and manage workload identities
 - ⚙️ Dynamic → Auto membership
 
 ---
+# Microsoft Entra Agent ID (AI Agent Identities)
+
+---
+
+## 🤖 What is Microsoft Entra Agent ID?
+
+Microsoft Entra Agent ID is a **security and identity framework** designed for **AI agents**.
+
+👉 Just like:
+- 👤 Users need identity
+- ⚙️ Apps need identity  
+
+➡️ Same way, **AI agents also need identity** to:
+- Authenticate
+- Access resources securely
+
+---
+
+## ❓ Why AI Agents Need Separate Identity?
+
+AI agents are different from normal apps:
+
+- 🧠 Make **dynamic decisions**
+- 🔄 Adapt based on context
+- 🤖 Work **autonomously**
+
+---
+
+## ⚠️ Security Challenges with AI Agents
+
+### 1️⃣ Expanded Attack Surface
+- Interact with external systems
+- Vulnerable to:
+  - Prompt injection attacks
+  - External threats
+
+---
+
+### 2️⃣ Permission Risks
+- Often given **broad permissions**
+- May:
+  - Access unnecessary data
+  - Perform unintended actions
+
+---
+
+### 3️⃣ Agent Sprawl
+- Too many agents created
+- Problems:
+  - No visibility
+  - No lifecycle control
+  - Old agents remain active
+
+---
+
+## 🎯 Goal
+👉 Treat AI agents **separately** from:
+- User identities
+- Workload identities
+
+➡️ Apply proper **security & governance**
+
+---
+
+## ⚙️ How Microsoft Entra Agent ID Works
+
+Built on top of:
+- Microsoft Entra ID platform
+
+---
+
+## 🔑 Key Concepts
+
+### 1️⃣ Agent Identity Blueprints
+
+#### 📌 What is it?
+- Template for creating agents
+
+#### 🔹 Contains:
+- Agent type/classification
+- Credentials (used indirectly)
+- Policies
+
+#### ✅ Example:
+- "Sales Assistant Agent"
+  - Defines permissions for all sales agents
+
+---
+
+### 2️⃣ Agent Identities
+
+#### 📌 What is it?
+- Individual AI agent instance
+
+#### 🔹 Features:
+- Unique ID
+- Display name
+- Sponsor (human/group responsible)
+
+#### ⚠️ Important:
+- No direct credentials
+- Uses **blueprint** for authentication
+
+---
+
+## 🔄 Blueprint → Identity Model
+
+- Blueprint = Template 🧩  
+- Agent Identity = Instance 🤖  
+
+👉 Benefits:
+- Centralized control
+- Easy management at scale
+
+---
+
+## 🛡️ Security & Management Benefits
+
+Admins can:
+- 🔐 Apply Conditional Access policies
+- 🚫 Disable permissions
+- 📊 Audit agents
+- ⚙️ Manage multiple agents easily
+
+---
+
+## ⚡ Final Summary
+
+- 🤖 AI agents need **separate identity system**
+- 🔐 Microsoft Entra Agent ID provides secure framework
+- 🧩 Blueprints = Templates
+- 🤖 Agent Identities = Instances
+- 🛡️ Enables centralized control & security
+
+---
 
 
