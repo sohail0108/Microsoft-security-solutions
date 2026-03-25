@@ -493,3 +493,208 @@ Helps secure and manage workload identities
 - 🛡️ Managed Identities = safest option
 
 ---
+# Microsoft Entra ID - Managed Identities, Devices & Groups
+
+---
+
+## 🔐 Managed Identities
+
+### 📌 What is it?
+- Special type of **service principal**
+- Automatically managed by Microsoft Entra ID
+- No need to store/manage credentials (passwords, secrets)
+
+### 🎯 Benefits:
+- 🔒 More secure (no hardcoded credentials)
+- ⚙️ Easy to use with Azure services
+- 💰 No extra cost
+---
+
+## 🔄 Types of Managed Identities
+
+### 1️⃣ System-Assigned Managed Identity
+
+#### 🔹 Key Points:
+- Created **automatically** when enabled on a resource
+- Tied to **one Azure resource**
+- Lifecycle depends on resource
+
+#### ⚡ Behavior:
+- Resource deleted → Identity also deleted
+
+#### ✅ Example:
+- App running on a **single Virtual Machine (VM)**
+
+---
+### 2️⃣ User-Assigned Managed Identity
+
+#### 🔹 Key Points:
+- Created as a **separate Azure resource**
+- Can be assigned to **multiple resources**
+
+#### ⚡ Behavior:
+- Resource deleted → Identity remains
+- Must be deleted **manually**
+
+#### ✅ Example:
+- Same identity used across **multiple VMs**
+
+---
+
+## ⚖️ Quick Difference
+
+| Feature | System-Assigned | User-Assigned |
+|--------|---------------|--------------|
+| Lifecycle | Tied to resource | Independent |
+| Reusability | ❌ No | ✅ Yes |
+| Deletion | Auto | Manual |
+
+---
+
+## 💻 Device Identities
+
+### 📌 What is a Device?
+- Hardware like:
+  - Mobile 📱
+  - Laptop 💻
+  - Server 🖥️
+  - Printer 🖨️
+
+### 🎯 Purpose:
+- Help admins control:
+  - Access
+  - Configuration
+  - Security policies
+
+---
+
+## 🔄 Types of Device Identities
+
+### 1️⃣ Microsoft Entra Registered
+- For **personal devices (BYOD)**
+- No need for org account login on device
+
+#### ✅ Use Case:
+- Employee using **personal mobile**
+
+---
+
+### 2️⃣ Microsoft Entra Joined
+- Device is **owned by organization**
+- Login using **org account**
+
+#### ✅ Use Case:
+- Company laptop
+
+---
+### 3️⃣ Microsoft Entra Hybrid Joined
+- Connected to:
+  - On-prem Active Directory
+  - Entra ID
+
+#### ✅ Use Case:
+- Organizations using **both on-prem + cloud**
+
+---
+
+## 🔑 Key Benefit of Devices
+- ✅ Single Sign-On (SSO)
+- ✅ Secure access to cloud + on-prem apps
+
+---
+## 📱 Device Management
+
+### 🛠️ Tool: Microsoft Intune
+- Cloud-based service
+- Handles:
+  - MDM (Mobile Device Management)
+  - MAM (Mobile Application Management)
+
+---
+## 👥 Groups in Microsoft Entra ID
+
+### 📌 What is a Group?
+- Collection of identities (users/devices)
+- Used to assign permissions **in bulk**
+
+### 🎯 Benefit:
+- No need to assign access individually
+- Follows **Zero Trust principle** (least access)
+
+---
+## 🔄 Types of Groups
+
+### 1️⃣ Security Groups
+
+#### 🔹 Purpose:
+- Manage access to resources
+
+#### 👥 Members:
+- Users (internal + external)
+- Devices
+- Other groups
+- Service principals
+
+#### ✅ Example:
+- Enforce MFA using Conditional Access
+
+#### ⚠️ Requirement:
+- Admin role needed to create
+
+---
+### 2️⃣ Microsoft 365 Groups
+
+#### 🔹 Purpose:
+- Collaboration
+
+#### 👥 Members:
+- Only users (including external)
+
+#### ✅ Features:
+- Shared mailbox 📧
+- Calendar 📅
+- SharePoint files 📂
+
+#### ⚡ Note:
+- Users can create (no admin needed)
+
+---
+## 🔄 Group Membership Types
+
+### 1️⃣ Assigned (Manual)
+- Admin manually adds/removes users
+
+---
+
+### 2️⃣ Dynamic Membership
+- Rules-based automatic membership
+
+#### ✅ Example Rule:
+- Department = "IT" → auto added to group
+
+---
+## ⚡ Final Summary
+
+### Managed Identities:
+- 🔐 Auto-managed identities for apps
+- 2 types:
+  - System-assigned (tied to resource)
+  - User-assigned (reusable)
+
+---
+
+### Devices:
+- 💻 Registered → Personal
+- 🏢 Joined → Organization
+- 🔄 Hybrid → On-prem + Cloud
+
+---
+
+### Groups:
+- 👥 Security → Access control
+- 🤝 Microsoft 365 → Collaboration
+- ⚙️ Dynamic → Auto membership
+
+---
+
+
