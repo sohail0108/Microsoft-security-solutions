@@ -832,4 +832,217 @@ Admins can:
 
 ---
 
+# Microsoft Entra ID - External Identities
 
+---
+
+## 🌐 What are External Identities?
+
+External identities allow **people outside your organization** to access:
+- Applications
+- Resources
+- Data
+
+👉 Used for collaboration with:
+- Partners 🤝
+- Customers 🧑‍💼
+- Business clients 🏢
+
+---
+
+## 🔐 Microsoft Entra External ID
+
+Microsoft Entra External ID is a solution that helps:
+- Securely manage **external users**
+- Allow users to **bring their own identity**
+
+---
+
+<img width="1120" height="531" alt="image" src="https://github.com/user-attachments/assets/2a57ca32-628e-45c8-b21e-02ce67b3b22c" />
+
+## 👤 Types of External Identities
+
+Users can sign in using:
+
+- 🏢 Corporate accounts (other organizations)
+- 🏛️ Government-issued accounts
+- 🌐 Social accounts:
+  - Google
+  - Facebook
+
+---
+
+
+## 🎯 Key Use Cases
+
+### 1️⃣ Collaborate with Business Guests
+- Partners, vendors, consultants
+- Secure access to internal resources
+
+---
+
+### 2️⃣ Apps for Consumers & Customers
+- Public apps (web/mobile)
+- Used by:
+  - Customers
+  - Business clients
+
+---
+
+## 🏢 Tenant Configuration Types
+
+Microsoft Entra supports **2 configurations**
+
+---
+
+### 1️⃣ Workforce Tenant
+
+#### 📌 Used for:
+- Employees
+- Internal apps
+- Organizational resources
+
+#### 🔹 Feature:
+- Can invite **external users (guests)**
+
+---
+
+### 2️⃣ External Tenant
+
+#### 📌 Used for:
+- External users only
+- Consumers / customers
+
+#### 🔹 Feature:
+- Apps published for public or business users
+
+<img width="1018" height="641" alt="image" src="https://github.com/user-attachments/assets/23d46a81-424c-4c93-b947-35c2440a260d" />
+
+---
+
+## ⚡ Quick Difference
+
+| Feature | Workforce Tenant | External Tenant |
+|--------|----------------|----------------|
+| Users | Employees + Guests | Only external users |
+| Purpose | Internal work | Customer-facing apps |
+| Access | Internal resources | Public/business apps |
+
+---
+
+## ⚡ Final Summary
+
+- 🌐 External Identities = Outside users
+- 🔐 Entra External ID secures access
+- 👤 Users can bring their own accounts
+- 🏢 Workforce tenant → Internal + guests
+- 🌍 External tenant → Only external users
+
+---
+
+
+# Microsoft Entra ID - B2B, CIAM & Direct Connect
+
+---
+
+## 🤝 B2B Collaboration (Business Guests)
+
+<img width="659" height="521" alt="image" src="https://github.com/user-attachments/assets/ea8e1c25-6699-49cf-b676-a426b2463d2f" />
+
+
+### 📌 What is it?
+- Allows employees to **collaborate with external partners**
+- Uses **External ID for B2B collaboration**
+
+---
+
+### 🔐 How it works:
+- External users (guests):
+  - Use **their own credentials**
+  - No need to create new passwords
+
+- Your organization:
+  - Controls access to apps & data
+  - Verifies user eligibility
+
+---
+
+### 🎯 Use Cases:
+- Office 365 apps 📧
+- SaaS applications ☁️
+- Internal business apps 🏢
+
+---
+
+### ⚡ Key Point:
+- Guests are added as **Guest users in your tenant**
+
+---
+
+## 🌐 CIAM (Customer Identity & Access Management)
+
+### 📌 What is it?
+- Used for **customers & business users**
+- Helps secure **public/consumer applications**
+  
+<img width="654" height="521" alt="image" src="https://github.com/user-attachments/assets/9ac480cc-5537-4ecf-9d47-4e83b6c8024c" />
+
+---
+
+### 🔹 Features:
+- 📝 Self-service registration (signup/login)
+- 🔑 Single Sign-On (SSO)
+- 🌍 Login using:
+  - Social accounts (Google, Facebook)
+  - Enterprise accounts
+
+- 👤 Customer account management
+
+---
+
+### 🎯 Benefits:
+- 🔐 Strong security
+- 📊 Scalable
+- 📋 Compliance ready
+
+---
+
+## 🔗 B2B Direct Connect
+
+### 📌 What is it?
+- Direct connection between **two Entra organizations**
+
+---
+
+### 🔹 Key Features:
+- No guest accounts created ❌
+- Users stay in **their home tenant**
+- Access shared resources directly
+
+---
+
+### 🎯 Example:
+- Microsoft Teams shared channels:
+  - Chat 💬
+  - Calls 📞
+  - File sharing 📂
+
+---
+
+## ⚖️ B2B vs Direct Connect
+
+| Feature | B2B Collaboration | B2B Direct Connect |
+|--------|------------------|-------------------|
+| User Type | Guest user | No guest |
+| Identity | Stored in your tenant | Stays in home tenant |
+| Use Case | App/resource access | Teams collaboration |
+
+---
+
+## ⚡ Final Summary
+
+- 🤝 B2B → External users as guests (access apps)
+- 🌐 CIAM → Customers use apps (login/signup)
+- 🔗 Direct Connect → Org-to-org direct access (no guest)
+
+---
