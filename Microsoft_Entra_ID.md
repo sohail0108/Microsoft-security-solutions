@@ -1197,3 +1197,691 @@ Use **phishing-resistant methods**
   - Conditional Access policies
  
 ---
+
+# 🔐 Multifactor Authentication (MFA) – Complete Revision Notes
+
+## 📌 What is MFA?
+
+- MFA = **Multiple layers of authentication during login**
+- Instead of only password → user must provide **2 or more factors**
+
+### ❗ Why MFA?
+- Passwords can be:
+  - Weak
+  - Reused
+  - Stolen (phishing, leaks)
+- ✅ MFA adds **extra security layer**
+- Makes it **hard for attackers to access accounts**
+
+---
+
+## 🔑 Authentication Factors (Core Concept)
+
+Microsoft Entra MFA uses:
+
+1. **Something you know**
+   - Password / PIN  
+
+2. **Something you have**
+   - Phone  
+   - Hardware key  
+   - Authenticator app  
+
+3. **Something you are**
+   - Fingerprint  
+   - Face recognition  
+
+---
+
+## ⚙️ How Microsoft Entra MFA Works
+
+- MFA is triggered during **sign-in event**
+- Microsoft Entra ID:
+  - Automatically requests MFA
+  - No app/service changes required  
+
+### 🔄 Login Flow
+1. User enters credentials  
+2. MFA prompt appears  
+3. User verifies identity using registered method  
+
+---
+
+### 👤 User Control
+- Users can:
+  - Add/edit methods via **MyAccount portal**
+- Admin can:
+  - Enforce specific MFA methods  
+
+---
+
+## 🔐 Available MFA Verification Methods
+
+<img width="1075" height="787" alt="image" src="https://github.com/user-attachments/assets/34cb52bd-d633-4741-81f7-c1a8794d4063" />
+
+### 📱 App-Based Methods
+- Microsoft Authenticator  
+- Authenticator Lite (Outlook)  
+
+---
+
+### 💻 Device-Based Methods
+- Windows Hello for Business  
+- Passkey (FIDO2)  
+- Passkey in Microsoft Authenticator  
+
+---
+
+### 🪪 Certificate-Based
+- Certificate-Based Authentication (CBA)  
+  - Works as MFA when configured  
+
+---
+
+### 🔗 External Methods
+- External authentication providers  
+
+---
+
+### ⏳ Temporary Access
+- Temporary Access Pass (TAP)  
+
+---
+
+### 🔢 Token-Based Methods
+- OATH Hardware Token  
+- OATH Software Token  
+
+---
+
+### 📞 Traditional Methods (Less Secure)
+- SMS (OTP)  
+- Voice Call  
+
+---
+
+## 🛡️ Security Defaults (VERY IMPORTANT)
+
+### 📌 What are Security Defaults?
+- Pre-configured **basic security settings**
+- Enabled by default in new tenants  
+- Free security baseline  
+
+---
+
+### 🔥 Key Features
+- Require MFA registration for all users  
+- Require MFA for admins  
+- Enforce MFA when needed  
+- Block legacy authentication  
+- Protect privileged operations (Azure portal)  
+
+---
+
+### 📊 Important Fact
+- ✅ **99.9% of identity attacks stopped using MFA + blocking legacy auth**
+
+---
+
+### 🔢 Number Matching (Anti MFA Fatigue)
+- During login:
+  - User sees a number  
+  - Must enter same number in Authenticator app  
+- ✅ Prevents:
+  - MFA fatigue attacks  
+  - Random approval attacks  
+
+---
+
+## ⚡ Conditional Access + MFA
+
+### 📌 What is Conditional Access?
+- Advanced policy-based control  
+- Requires **Entra ID P1/P2 license**  
+
+---
+
+### 🎯 Purpose
+- Apply MFA based on conditions:
+  - Location  
+  - Device  
+  - Risk level  
+  - Application sensitivity  
+
+---
+
+### 📍 Real Example
+
+- ✅ Inside office network:
+  - Only password required  
+
+- ❗ Outside network:
+  - MFA required  
+
+---
+
+## 🧠 Quick Revision Points
+
+- MFA = **2 or more factors**
+- Types:
+  - Know (password)
+  - Have (device)
+  - Are (biometric)
+
+---
+
+### ✅ Most Secure Methods
+- Passkeys (FIDO2)  
+- Windows Hello  
+- Authenticator app  
+
+---
+
+### ❌ Less Secure
+- SMS OTP  
+- Voice call  
+
+---
+
+### 🔥 Important Concepts
+- MFA stops **credential theft attacks**
+- Security defaults = **basic protection**
+- Conditional Access = **advanced control**
+- Number matching = **anti MFA fatigue**
+
+---
+
+## 🧑‍💻 SOC Analyst Perspective
+
+- Enforce MFA for all users  
+- Prefer phishing-resistant methods  
+- Monitor:
+  - MFA bypass attempts  
+  - Unusual login activity  
+- Block legacy authentication  
+
+---
+
+## 🚀 Final Real-Life Flow
+
+1. User enters username + password  
+2. Gets MFA prompt  
+3. Approves via Authenticator / OTP  
+
+👉 Access granted securely  
+
+---
+# 🔐 Self-Service Password Reset (SSPR) – Full Detailed Notes
+
+## 📌 What is SSPR?
+
+- SSPR = Users can **reset/change password without admin/helpdesk**
+- Works when:
+  - User forgets password  
+  - Account is locked  
+
+### 🎯 Benefits
+- Reduces helpdesk calls  
+- Improves productivity  
+- Faster account recovery  
+
+### 📊 Logging
+- Provides **audit logs**
+- Logs can be integrated with:
+  - SIEM systems  
+
+---
+
+## ⚙️ How SSPR Works
+
+When user opens SSPR portal, Microsoft Entra performs checks:
+
+1. ✅ User account is valid  
+2. ✅ SSPR is enabled  
+3. ✅ User has registered authentication methods  
+4. ✅ Password location is identified (cloud/on-prem)  
+
+👉 If all pass → user can reset/change password  
+
+---
+
+## 👤 Requirements to Use SSPR
+
+User must:
+
+- Have **Microsoft Entra ID license**
+- Be **enabled for SSPR by admin**
+- Be **registered with authentication methods**
+
+📌 Recommendation:
+- Use **2 or more authentication methods** (backup safety)
+
+---
+
+## 🔐 Authentication Methods for SSPR
+
+Users must register at least **1 method (2 recommended)**
+
+### 📱 Supported Methods
+- Microsoft Authenticator (push notification)  
+- Software OATH tokens  
+- Hardware OATH tokens (preview)  
+- SMS (OTP)  
+- Voice call  
+- Email OTP  
+- Security questions ⚠️  
+
+---
+
+### ⚠️ Important Update
+- ❌ Security Questions will be **retired in March 2027**
+- ✅ Organizations must switch to other methods  
+
+---
+
+## ⚙️ Admin Configuration
+
+Admins can:
+
+- Choose **required methods (1 or 2)**
+- Control authentication options  
+- Enable/disable SSPR  
+
+---
+
+### 🔑 Special Case (Admins)
+
+- Admin accounts:
+  - Always enabled for SSPR  
+  - Require **2 authentication methods**  
+  - ❌ Cannot use security questions  
+
+---
+
+## 🔄 Registration & Reconfirmation
+
+### 📌 Registration
+- Users must register methods before using SSPR  
+- Prompt shown during login if not registered  
+
+---
+
+### 🔁 Reconfirmation
+- Admin can force users to re-verify info  
+- Time range: **0–730 days**
+
+👉 Ensures methods stay updated  
+
+---
+
+## 🔔 Notifications
+
+### 📧 User Notifications
+- Email sent when password is reset  
+- Sent to:
+  - Primary email  
+  - Alternate email  
+
+---
+
+### 👨‍💼 Admin Notifications
+- Global admins get alert when:
+  - Another admin resets password  
+
+👉 Adds security for privileged accounts  
+
+---
+
+## 🔄 On-Prem Integration (Password Writeback)
+
+### 📌 What is Password Writeback?
+
+- Syncs password from:
+  - Microsoft Entra ID → On-prem AD  
+
+---
+
+### 🔄 Supported Scenarios
+- Password Hash Sync  
+- Pass-through Authentication  
+- Federation  
+
+---
+
+### 🔓 Extra Feature
+- Users can:
+  - Unlock account without resetting password  
+
+---
+
+### ⚠️ Important
+- Custom password filters must support SSPR  
+- Microsoft Entra password protection works by default  
+
+---
+
+## 🚨 Account Recovery (VERY IMPORTANT DIFFERENCE)
+
+### 📌 Problem Scenario
+- User loses ALL authentication methods  
+
+👉 SSPR cannot help  
+
+---
+
+### 🔐 Solution → Account Recovery
+
+- Uses **identity verification process**
+- Powered by:
+  - Microsoft Entra Verified ID  
+  - Face Check (Azure AI)  
+
+---
+
+### 📊 SSPR vs Account Recovery
+
+| Aspect | SSPR | Account Recovery |
+|------|------|----------------|
+| Use case | Forgot password | Lost all methods |
+| Requirement | At least 1 method | Identity verification |
+| Scope | Password reset only | Full account recovery |
+| Security | Medium | High |
+
+---
+
+### 🔥 Key Advantage
+- No human involvement → reduces social engineering risk  
+
+---
+
+## 🧠 Exam Important Points
+
+- SSPR = **Self password reset without admin**
+- Requires:
+  - License  
+  - Enablement  
+  - Registration  
+- Methods:
+  - Authenticator, OTP, Email, etc.  
+- Security questions → ❌ Removed by 2027  
+- Admins:
+  - Require 2 methods  
+- Password writeback:
+  - Sync to on-prem AD  
+- Account recovery:
+  - Used when **all methods lost**  
+
+---
+
+## 🧑‍💻 Real-Life Example
+
+### 🏢 Scenario
+
+1. User forgets password  
+2. Opens SSPR portal  
+3. Gets OTP on phone  
+4. Verifies identity  
+5. Sets new password  
+6. Logs in  
+
+👉 No helpdesk needed  
+
+---
+
+## 🛡️ SOC Analyst Perspective
+
+- Monitor:
+  - Multiple reset attempts  
+  - Suspicious reset patterns  
+- Ensure:
+  - Strong authentication methods  
+- Combine with:
+  - MFA  
+  - Conditional Access  
+
+---
+
+## ⚡ Quick Revision
+
+- SSPR = Reset password yourself  
+- Needs registered authentication methods  
+- Supports password writeback  
+- Security questions retiring (2027)  
+- Account recovery = backup for full lockout
+
+---
+# 🔐 Password Protection & Management – Microsoft Entra ID
+
+## 📌 What is Password Protection?
+
+- Feature that **prevents weak passwords**
+- Detects & blocks:
+  - Common passwords  
+  - Weak patterns  
+  - Organization-specific terms  
+
+### 🎯 Goal
+- Reduce risk of:
+  - Password attacks  
+  - Credential compromise  
+
+---
+
+## ⚠️ Important Concept
+
+- Strong passwords alone ❌ not enough  
+- ✅ Must combine with:
+  - MFA  
+  - Conditional Access  
+
+---
+
+## 🌍 Global Banned Password List
+
+### 📌 What is it?
+- Default list of **weak/compromised passwords**
+- Created using:
+  - Real-world attack data  
+  - Password spray analysis  
+
+---
+
+### 🔑 Key Features
+
+- ✅ Automatically enabled  
+- ❌ Cannot be disabled  
+- ❌ No configuration needed  
+- Applied to:
+  - All users in tenant  
+
+---
+
+### 🧠 Smart Detection
+
+- Uses:
+  - Fuzzy matching  
+  - Pattern detection  
+- Blocks:
+  - Millions of password variations  
+
+---
+
+## 🏢 Custom Banned Password List
+
+### 📌 What is it?
+- Organization-defined weak terms  
+
+---
+
+### 📝 Examples to Add
+
+- Company name  
+- Product names  
+- Office location  
+- Internal abbreviations  
+
+---
+
+### ⚙️ Key Points
+
+- Max limit: **1000 terms**  
+- Works with:
+  - Global banned list (combined)  
+- Focus:
+  - Base words (system blocks variations automatically)  
+
+---
+
+## ⚙️ How Password Evaluation Works
+
+When user sets/resets password:
+
+### 1️⃣ Normalization
+- Converts:
+  - Uppercase → lowercase  
+- Replaces:
+  - @ → a  
+  - $ → s  
+  - 0 → o  
+
+---
+
+### 2️⃣ Fuzzy Matching
+- Detects:
+  - 1-character differences  
+- Example:
+  - "Password" → "Passw0rd" ❌ blocked  
+
+---
+
+### 3️⃣ Substring Matching
+- Blocks:
+  - User name  
+  - Company name  
+
+📌 Condition:
+- Term must be **≥ 4 characters**
+
+---
+
+### 4️⃣ Score Calculation (IMPORTANT)
+
+- +1 point → each banned term  
+- +1 point → each remaining character  
+
+👉 Password must score **≥ 5 points**
+
+---
+
+### 📌 Key Insight
+- Long passwords ✅ allowed even if slightly weak  
+- Short passwords ❌ rejected  
+
+---
+
+## 🚨 Password Spray Attack Protection
+
+### 📌 What is Password Spray?
+
+- Attacker tries:
+  - Few common passwords  
+  - Across many accounts  
+
+---
+
+### ⚠️ Why Dangerous?
+- Avoids:
+  - Account lockouts  
+- Targets:
+  - Weak passwords  
+
+---
+
+### 🛡️ Protection
+
+- Global banned list blocks:
+  - Most used attack passwords  
+- Based on:
+  - Real attack telemetry  
+
+---
+
+## 🔄 On-Premises Integration (Hybrid)
+
+### 📌 Supported via Microsoft Entra Password Protection
+
+---
+
+### 🧩 Components
+
+#### 1️⃣ Proxy Service
+- Runs on domain-joined machine  
+- Connects:
+  - On-prem → Entra ID  
+
+---
+
+#### 2️⃣ DC Agent
+- Installed on domain controllers  
+- Validates:
+  - Password changes  
+
+---
+
+### 🔄 How It Works
+
+1. User changes password (on-prem)  
+2. DC Agent checks policy  
+3. Proxy connects to Entra  
+4. Policy applied  
+5. Password accepted/rejected  
+
+---
+
+### 🔑 Key Points
+
+- Same:
+  - Global + Custom lists used  
+- No:
+  - Direct internet access needed  
+- No:
+  - Schema changes required  
+
+---
+
+### 🔄 Policy Updates
+
+- Policy downloaded:
+  - At startup  
+  - Every hour (if outdated)  
+
+---
+
+### ⚠️ Important
+
+- Works as:
+  - Supplement (not replacement)  
+- Both must pass:
+  - AD DS policy  
+  - Entra policy  
+
+---
+
+## 🧠 Exam Important Points
+
+- Global banned list:
+  - Auto-enabled  
+  - Cannot disable  
+- Custom list:
+  - Max 1000 terms  
+- Password evaluation:
+  - Normalization  
+  - Fuzzy matching  
+  - Substring check  
+  - Score ≥ 5  
+- Protects against:
+  - Password spray attacks  
+- Hybrid support:
+  - Proxy + DC Agent  
+
+---
