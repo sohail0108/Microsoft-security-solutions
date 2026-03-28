@@ -1885,3 +1885,268 @@ When user sets/resets password:
   - Proxy + DC Agent  
 
 ---
+# 🔐 Conditional Access – Microsoft Entra ID (Zero Trust Engine)
+
+## 📌 What is Conditional Access?
+
+- Conditional Access = **Policy-based access control**
+- Adds **extra security layer AFTER login (first-factor authentication)**
+
+👉 Works like:
+
+IF condition → THEN action
+
+
+### 📍 Example
+- IF user logs in from outside network  
+- THEN require MFA  
+
+---
+
+## 🎯 Purpose
+
+- Enforce **Zero Trust security**
+- Control:
+  - Who can access  
+  - What they access  
+  - From where  
+  - Under what conditions  
+
+---
+
+## ⚠️ Important Point
+
+- Applied **after authentication**
+- ❌ Not used for:
+  - DoS attack prevention  
+- ✅ Uses risk signals from attacks  
+
+---
+
+## 🧩 Conditional Access Policy Components
+
+Each policy has **2 main parts**:
+
+### 1️⃣ Assignments (WHEN policy applies)
+### 2️⃣ Access Controls (WHAT action to take)
+
+---
+
+# 🟢 1. Assignments (Who, What, Where, When)
+
+👉 All conditions are **ANDed (must be true)**
+
+---
+
+## 👤 Users
+
+Target:
+- All users  
+- Specific users/groups  
+- Admin roles  
+- Guests  
+- Workload identities (AI, apps)  
+
+---
+
+## 🎯 Target Resources
+
+Applies to:
+- Cloud apps (M365, Azure apps)  
+- User actions (register device, security info)  
+- Authentication context  
+- AI services  
+
+---
+
+## 🌍 Network (Location-based)
+
+Control access based on:
+- IP address  
+- Location  
+- Trusted networks  
+- Named locations  
+
+---
+
+## ⚙️ Conditions (Advanced Control)
+
+### 🔐 Risk-Based
+- Sign-in risk (suspicious login)  
+- User risk (compromised account)  
+
+---
+
+### 🧠 Insider Risk
+- Based on Microsoft Purview signals  
+
+---
+
+### 💻 Device Platform
+- Windows / Android / iOS / macOS  
+
+---
+
+### 🌐 Client Apps
+- Browser  
+- Mobile apps  
+- Desktop apps  
+
+---
+
+### 🖥️ Device Filters
+- Target specific devices  
+- Example:
+  - Privileged access workstation  
+
+---
+
+# 🔵 2. Access Controls (What happens)
+
+---
+
+## 🚫 Block Access
+- Completely deny access  
+
+---
+
+## ✅ Grant Access (with conditions)
+
+Can require:
+
+- MFA  
+- Authentication strength  
+- Compliant device  
+- Hybrid joined device  
+- Approved app  
+- Password change  
+- Terms of use  
+
+---
+
+## 🧪 Session Controls
+
+Limit user actions after login:
+
+- Block download/copy/print  
+- Require file labeling  
+- Control session time  
+
+---
+
+# 🔑 Authentication Strengths (VERY IMPORTANT)
+
+Defines **how strong authentication must be**
+
+---
+
+## 1️⃣ Multifactor Authentication Strength
+- Password + OTP / push / token  
+
+---
+
+## 2️⃣ Passwordless MFA Strength
+- No password required  
+- Methods:
+  - Authenticator (phone sign-in)  
+  - FIDO2  
+  - Windows Hello  
+
+---
+
+## 3️⃣ Phishing-Resistant MFA (MOST SECURE)
+
+- Strongest security  
+- Methods:
+  - FIDO2  
+  - Windows Hello  
+  - Certificate-based auth  
+
+---
+
+## 🔧 Custom Authentication Strength
+- Admin defines allowed methods  
+
+---
+
+# 🤖 Protecting AI Services
+
+Conditional Access can secure:
+
+- Microsoft 365 Copilot  
+- Security Copilot  
+
+---
+
+### 🔐 Example Policies
+
+- Require phishing-resistant MFA  
+- Allow access only from compliant device  
+- Block access if insider risk is high  
+
+---
+
+# 💳 Licensing
+
+- Requires:
+  - Microsoft Entra ID P1 or P2  
+
+---
+
+### 🆓 Free Tier Alternative
+- Use **Security Defaults**
+  - Basic MFA enforcement  
+
+---
+
+# 🧠 Exam Important Points
+
+- Conditional Access = **IF → THEN policy**
+- Applied:
+  - After authentication  
+- Components:
+  - Assignments + Access Controls  
+- Assignments:
+  - Who, what, where, when  
+- Access controls:
+  - Grant / Block / Session control  
+
+---
+
+## 🔥 High-Value Points
+
+- MFA can be enforced via Conditional Access  
+- Risk-based access (VERY IMPORTANT)  
+- Authentication strengths define security level  
+- Phishing-resistant MFA = most secure  
+
+---
+
+# 🧑‍💻 Real-Life Example
+
+### 🏢 Scenario
+
+1. User logs in from home  
+2. Condition triggered:
+   - Unknown location  
+3. Policy applied:
+   - Require MFA  
+
+👉 Access granted after verification  
+
+---
+
+# 🛡️ SOC Analyst Perspective
+
+- Monitor:
+  - Risky sign-ins  
+  - Policy violations  
+- Enforce:
+  - MFA for sensitive apps  
+- Use:
+  - Risk-based Conditional Access  
+- Protect:
+  - Admin accounts  
+  - AI services  
+
+---
