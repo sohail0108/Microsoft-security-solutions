@@ -1046,3 +1046,154 @@ Microsoft Entra supports **2 configurations**
 - 🔗 Direct Connect → Org-to-org direct access (no guest)
 
 ---
+# 🔐 Authentication Methods (Microsoft Entra ID)
+
+<img width="1639" height="768" alt="image" src="https://github.com/user-attachments/assets/d71be8fa-ec92-4e1f-bfc9-fa68b582fdb1" />
+
+
+## 1. Password-based Authentication
+- Most common method (username + password)  
+- ❌ Weak when used alone (phishing, brute-force attacks)  
+- ✅ Should be combined with MFA or passwordless methods  
+
+---
+
+## 2. Phone-based Authentication
+- **SMS OTP** → Code sent via text (primary/secondary)  
+- **Voice Call** → User confirms via call (secondary only)  
+- ⚠️ Less secure (SIM swap, phishing risks)  
+
+---
+
+## 3. OATH Tokens (TOTP)
+- Generates time-based one-time passwords  
+- Types:
+  - **Software tokens** → Apps (Microsoft Authenticator)  
+  - **Hardware tokens** → Physical devices (key fob)  
+- Used as MFA / secondary authentication  
+
+---
+
+## 4. Other Authentication Methods
+- **Temporary Access Pass (TAP)** → Temporary login for onboarding/recovery  
+- **QR Code Authentication** → Fast login for shared/frontline devices  
+- **Email OTP** → Used in SSPR and guest access  
+- **Authenticator Lite** → MFA inside apps (e.g., Outlook mobile)  
+- **External MFA Providers** → Duo, RSA integration  
+- **Platform Credential (macOS)** → Secure device-based authentication  
+
+---
+
+## 5. Passwordless Authentication (Most Important)
+
+### a) Windows Hello for Business
+- Uses **PIN + biometrics + device key**
+- Provides strong protection against credential theft  
+
+### b) Passkeys (FIDO2)
+- Uses **public-private key cryptography**
+- Types:
+  - **Device-bound** (stored on a single device)
+  - **Synced** (across devices via cloud providers)
+- ✅ Phishing-resistant  
+
+### c) Microsoft Authenticator
+- Supports:
+  - Passwordless login  
+  - Push notifications (MFA)  
+  - OTP codes  
+- Uses number matching for enhanced security
+  
+<img width="590" height="381" alt="image" src="https://github.com/user-attachments/assets/c4c22dd9-99d2-4904-ab7a-7e150f97fea4" />
+
+---
+
+# 🔐 Certificate-Based & Phishing-Resistant Authentication (Easy Notes)
+
+## 📜 Certificate-Based Authentication (CBA)
+
+- Uses **X.509 certificates** to verify user identity  
+- Users sign in **without passwords**  
+- Works directly with **Microsoft Entra ID (cloud-based)**  
+- ❌ No need for AD FS (no extra infrastructure)  
+
+### ✅ Key Points
+- Passwordless authentication  
+- Can be used as:
+  - **Primary authentication**
+  - **MFA (secondary authentication)**  
+- More secure than passwords  
+
+---
+
+## 🎣 Phishing-Resistant Authentication
+
+### ❗ Problem
+- SMS OTP & Email OTP can be **phished (stolen)**  
+- Attackers use **AI + social engineering**  
+
+### ✅ Solution
+Use **phishing-resistant methods**
+
+### 🔐 How it works
+- Uses **public-private key cryptography**  
+- Credential is linked to a **specific website/domain**  
+- ✔️ Works only on original site  
+- ❌ Cannot be reused or stolen  
+
+---
+
+## 🚀 Phishing-Resistant Methods (IMPORTANT)
+
+- **Windows Hello for Business**  
+- **Platform Credential (macOS)**  
+- **Passkeys (FIDO2)**  
+- **Microsoft Authenticator (Passkeys)**  
+- **Certificate-Based Authentication (CBA)**  
+
+---
+
+## 🔑 Primary vs Secondary Authentication
+
+### 🟢 Primary Authentication
+- First step during login  
+- Examples:
+  - Password  
+  - Passkeys  
+  - CBA  
+
+---
+
+### 🟡 Secondary Authentication (MFA)
+- Second layer of security  
+- Used after primary login  
+- Examples:
+  - OTP (SMS/Email)  
+  - Authenticator app  
+  - OATH tokens  
+
+---
+
+# 🔥 Key Points (Exam & Interview)
+
+- **Best Security:** Passkeys (FIDO2), Windows Hello  
+- **Weak Methods:** Passwords, SMS OTP  
+- **MFA is essential**  
+- **Phishing-resistant methods:** Passkeys, Authenticator  
+- **TAP:** Used for onboarding and recovery  
+
+---
+
+# 🛡️ SOC Analyst Perspective
+
+- Monitor for:
+  - Multiple failed login attempts (brute force)  
+  - MFA fatigue attacks (push spam)  
+  - Suspicious OTP activity  
+
+- Enforce:
+  - MFA policies  
+  - Passwordless authentication  
+  - Conditional Access policies
+ 
+---
